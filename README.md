@@ -1,2 +1,2 @@
-# Chatter
-A chat styler plugin for Cuberite
+# What Is This
+これはサーバーのチャットログをカスタマイズするためのpluginです
