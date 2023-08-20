@@ -1,8 +1,16 @@
 
 -- This file contains the hook handler.
 
-
-
+function getNowTime()
+	local utcTime = os.time()
+    local localTime = os.date("*t", utcTime)
+	return localTime.hour .. ":" .. localTime.min .. ":" .. localTime.sec
+end
+function getNowDay()
+	local utcTime = os.time()
+    local localTime = os.date("*t", utcTime)
+	return localTime.year .. "/" .. localTime.month .. "/" .. localTime.day
+end
 
 
 function OnChat(a_Player, a_Message)	
@@ -60,7 +68,9 @@ function OnChat(a_Player, a_Message)
 		:gsub("{WORLDINITIAL}", World:GetName():sub(1, 1))
 		:gsub("{GROUPS}", Groups)
 		:gsub("{MESSAGE}", a_Message)
-		
+		:gsub("{TIME}", getNowTime())
+		:gsub("{DAY}", getNowDay())
+
 	TempMessage = CallPlugins(TempMessage, a_Player)
 		
 	if (g_Config.ChatPerWorld) then

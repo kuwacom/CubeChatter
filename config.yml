@@ -1,0 +1,71 @@
+#Variables:
+#   PREFIX - {PREFIX}
+#   SUFFIX - {SUFFIX}
+#   RANK - {RANK}
+#   PLAYER-NAME - {PLAYER_NAME}
+#   DIPLAY-NAME - {DISPLAY_NAME}
+#   PLAYER-MESSAGE {MESSAGE}
+#   VAULT-ECONOMY-MONEY {MONEY}
+#   WORLD-NAME - {WORLD}
+#   COLOR CODES - &
+
+#Essentials Variables:
+# FOR PLUGIN: Essentials!
+#   Essentials money - {ESS_MONEY}
+#   Essentials nick name - {ESS_NICK_NAME}
+
+#PvPStats Variables:
+# FOR PLUGIN: PvPStats!
+#   PvPStats kills - {PVP_STATS_KILLS}
+#   PvPStats deaths - {PVP_STATS_DEATHS} 
+
+#Multiverse-Core Variables:
+# FOR PLUGIN: Multivesre-Core
+# Coloured world name - {MV_WORLD}
+
+#KingKits Variables:
+# FOR PLUGIN: KingKits!
+#   KillStreak - {KK_KILLSTREAK}
+#   Kit - {KK_KIT}
+#   Score - {KK_SCORE}
+
+#PlaceholderAPI Variables: https://www.spigotmc.org/wiki/placeholderapi-placeholders/
+# FOR PLUGIN: PlaceholderAPI!
+
+#DEPEND: 
+# - Vault: https://dev.bukkit.org/bukkit-plugins/vault/
+# - Permissions plugin based on Vault (PermissionsEx, GroupManager,...)
+
+#SOFTDEPENDS: 
+# - PvPStats: https://www.spigotmc.org/resources/pvp-stats.22396/
+# - Multiverse-Core: https://dev.bukkit.org/bukkit-plugins/multiverse-core/
+# - KingKits: https://www.spigotmc.org/resources/kingkits.2209/
+# - PlaceholderAPI: https://www.spigotmc.org/resources/placeholderapi.6245/
+# - Essentials
+
+#COMMANDS:
+# - /chatformat reload
+#
+
+#PERMISSIONS:
+# - ChatFormat.admin (For command /chatformat reload)
+# - ChatFormat.color (Color chat codes "&" for VIP!)
+
+
+#Settings
+default_format: '&7[%localtime_timezone_Japan,aahh:mm%]&c[権限が登録されていないプレイヤーです！] &6{PLAYER_NAME} &7in &2%player_world% &e&l> &r{SUFFIX}{MESSAGE}'
+
+PluginReloaded: '&0[&eChatFormat&0] &aConfig reloaded!'
+NoPermissions: '&0[&eChatFormat&0] &cYou dont have permissions!'
+UnkownCommand: '&0[&eChatFormat&0] &cUse: &e/chatformat reload'
+
+#GROUPS
+groups:
+  guest:
+    format: '&7[%localtime_timezone_Japan,aahh:mm%]&r &6{PLAYER_NAME} &7in &2%player_world% &e&l> &r{SUFFIX}{MESSAGE}'
+  lobby:
+    format: '&7[%localtime_timezone_Japan,aahh:mm%]&r{PREFIX}&r &6{PLAYER_NAME} &2&7in &2%player_world% &e&l> &r{SUFFIX}{MESSAGE}'
+  admin:
+    format: '&7[%localtime_timezone_Japan,aahh:mm%]&r{PREFIX}&r &6{PLAYER_NAME} &2&7in &2%player_world% &e&l> &r{SUFFIX}{MESSAGE}'
+  owner:
+    format: '&7[%localtime_timezone_Japan,aahh:mm%]&r{PREFIX}&r &e{PLAYER_NAME} &2&7in &2%player_world% &a&l> &r{SUFFIX}{MESSAGE}'
